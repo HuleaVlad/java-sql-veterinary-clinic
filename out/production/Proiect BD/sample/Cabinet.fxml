@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="815.0" prefWidth="925.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Cabinet">
+   <children>
+      <Label alignment="BOTTOM_RIGHT" prefHeight="55.0" prefWidth="267.0" text="Cabinet Veterinar">
+         <font>
+            <Font name="Bookman Old Style" size="29.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="150.0" fitWidth="148.0" layoutX="452.0" pickOnBounds="true" preserveRatio="true" />
+      <TabPane layoutX="7.0" layoutY="65.0" prefHeight="746.0" prefWidth="911.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Animale">
+            <content>
+              <AnchorPane prefHeight="436.0" prefWidth="911.0">
+                     <children>
+                        <TableView fx:id="tableAnimal" prefHeight="408.0" prefWidth="911.0" AnchorPane.bottomAnchor="309.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                              <TableColumn fx:id="animaleColumnIdAnimal" prefWidth="119.0" text="ID Animal" />
+                              <TableColumn fx:id="animaleColumnTipAnimal" prefWidth="108.0" text="Tip Animal" />
+                              <TableColumn fx:id="animaleColumnGreutate" prefWidth="121.0" text="Greutate" />
+                              <TableColumn fx:id="animaleColumnSex" prefWidth="33.0" text="Sex" />
+                              <TableColumn fx:id="animaleColumnDataNasterii" prefWidth="126.0" text="Data Nasterii" />
+                              <TableColumn fx:id="animaleColumnHrana" prefWidth="94.0" text="Hrana" />
+                              <TableColumn fx:id="animaleColumnNumeProprietar" minWidth="0.0" prefWidth="149.0" text="Nume Proprietar" />
+                              <TableColumn fx:id="animaleColumnPrenumeProprietar" prefWidth="173.0" text="Prenume Proprietar" />
+                          </columns>
+                        </TableView>
+                        <TabPane layoutY="408.0" prefHeight="309.0" prefWidth="911.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab text="Meniu">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Button fx:id="btnRefreshAnimale" layoutX="8.0" layoutY="34.0" mnemonicParsing="false" onMouseClicked="#setBtnRefreshDateAnimaleOnClick" prefHeight="49.0" prefWidth="200.0" text="Incarca Date Animale" />
+                                          <Button fx:id="btnDelAnimale" layoutX="9.0" layoutY="177.0" mnemonicParsing="false" onMouseClicked="#setBtnDeleteAnimaleOnClick" prefHeight="49.0" prefWidth="200.0" text="Sterge Animale" />
+                                          <Button fx:id="btnAddAnimale" layoutX="6.0" layoutY="91.0" mnemonicParsing="false" onMouseClicked="#setBtnAddAnimaleOnClick" prefHeight="41.0" prefWidth="203.0" text="Adauga Animale" />
+                                          <Button fx:id="btnSaveAnimale" layoutX="258.0" layoutY="161.0" mnemonicParsing="false" onMouseClicked="#setBtnSaveAnimaleOnClick" text="Save" />
+                                          <TextField fx:id="txtAnimaleGreutateAdd" layoutX="426.0" layoutY="91.0" promptText="Greutate" />
+                                          <TextField fx:id="txtAnimaleSexAdd" layoutX="258.0" layoutY="128.0" promptText="Sex: 'M' or 'F'" />
+                                          <TextField fx:id="txtAnimaleHranaAdd" layoutX="426.0" layoutY="128.0" promptText="Hrana" />
+                                          <TextField fx:id="txtAnimaleNumeProprietarAdd" layoutX="590.0" layoutY="128.0" promptText="Nume Proprietar" />
+                                          <DatePicker fx:id="txtAnimaleIDataNasteriiAdd" layoutX="590.0" layoutY="91.0" prefHeight="25.0" prefWidth="148.0" />
+                                          <Button fx:id="btnEditAnimale" layoutX="9.0" layoutY="136.0" mnemonicParsing="false" onMouseClicked="#setBtnEditAnimaleOnClick" prefHeight="37.0" prefWidth="200.0" text="Edit" />
+                                          <TextField fx:id="txtAnimalePrenumeProprietarAdd1" layoutX="590.0" layoutY="161.0" promptText="Prenume Proprietar" />
+                                          <Button fx:id="btnAnimaleCreate" layoutX="314.0" layoutY="162.0" mnemonicParsing="false" onMouseClicked="#setBtnAnimaleCreateOnClick" prefHeight="16.0" prefWidth="89.0" text="Create" />
+                                          <TextField fx:id="txtAnimaleTipAnimalAdd" layoutX="426.0" layoutY="161.0" promptText="Tip Animal" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab text="Search">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TitledPane animated="false" layoutX="14.0" layoutY="15.0" prefHeight="205.0" prefWidth="315.0" text="Proprietar">
+                                            <content>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="179.0" prefWidth="291.0">
+                                                   <children>
+                                                      <Label layoutX="7.0" layoutY="14.0" prefHeight="27.0" prefWidth="148.0" text="Nume Proprietar" />
+                                                      <TextField fx:id="txtAnimaleNumeProprietarSearch" layoutX="7.0" layoutY="41.0" />
+                                                      <TextField fx:id="txtAnimalePrenumeProprietarSearch" layoutX="7.0" layoutY="123.0" />
+                                                      <Label layoutX="7.0" layoutY="94.0" prefHeight="27.0" prefWidth="148.0" text="Prenume Proprietar" />
+                                                      <Button layoutX="125.0" layoutY="74.0" mnemonicParsing="false" onMouseClicked="#setBtnSearchAnimaleProprietarOnClick" prefHeight="32.0" prefWidth="174.0" text="Cauta Animal dupa Proprietar" />
+                                                   </children>
+                                                </AnchorPane>
+                                            </content>
+                                          </TitledPane>
+                                          <TitledPane animated="false" layoutX="407.0" layoutY="14.0" prefHeight="206.0" prefWidth="336.0" text="Veterinar">
+                                             <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="291.0">
+                                                   <children>
+                                                      <Label layoutX="7.0" layoutY="14.0" prefHeight="27.0" prefWidth="148.0" text="Nume Veterinar" />
+                                                      <TextField fx:id="txtAnimaleNumeVeterinarEdit" layoutX="7.0" layoutY="41.0" />
+                                                      <TextField fx:id="txtAnimalePrenumeVeterinarEdit" layoutX="8.0" layoutY="114.0" />
+                                                      <Label layoutX="8.0" layoutY="77.0" prefHeight="27.0" prefWidth="148.0" text="Prenume Veterinar" />
+                                                      <Button layoutX="155.0" layoutY="74.0" mnemonicParsing="false" onMouseClicked="#setBtnSearchAnimaleVeterinarOnClick" prefHeight="33.0" prefWidth="174.0" text="Cauta Animal dupa Veterinar" />
+                                                   </children>
+                                                </AnchorPane>
+                                             </content>
+                                          </TitledPane>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Hrana">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableHrana" prefHeight="594.0" prefWidth="911.0" AnchorPane.bottomAnchor="123.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="hranaColumnIdHrana" prefWidth="75.0" text="ID Hrana" />
+                            <TableColumn fx:id="hranaColumnTipHrana" prefWidth="192.0" text="Tip Hrana" />
+                              <TableColumn fx:id="hranaColumnBrand" prefWidth="104.0" text="Brand" />
+                              <TableColumn fx:id="hranaColumnPret" prefWidth="152.0" text="Pret" />
+                          </columns>
+                        </TableView>
+                        <Button layoutX="14.0" layoutY="655.0" mnemonicParsing="false" onMouseClicked="#setBtnRefreshDateHranaOnClick" prefHeight="48.0" prefWidth="198.0" text="Incarca Date Hrana" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="655.0" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Proprietar">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableProprietar" prefHeight="618.0" prefWidth="911.0" AnchorPane.bottomAnchor="99.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="proprietarColumnIdProprietar" prefWidth="81.0" text="ID Proprietar" />
+                            <TableColumn fx:id="proprietarColumnNume" prefWidth="163.0" text="Nume " />
+                              <TableColumn fx:id="proprietarColumnPrenume" prefWidth="144.0" text="Prenume" />
+                              <TableColumn fx:id="proprietarColumnTelefon" prefWidth="171.0" text="Telefon" />
+                              <TableColumn fx:id="proprietarColumnMail" prefWidth="312.0" text="Mail" />
+                          </columns>
+                        </TableView>
+                        <Button layoutX="14.0" layoutY="655.0" mnemonicParsing="false" onMouseClicked="#setBtnRefreshProprietarOnClick" prefHeight="48.0" prefWidth="224.0" text="Incarca Date Proprietar" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Tip Animal">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableTipAnimal" prefHeight="629.0" prefWidth="911.0" AnchorPane.bottomAnchor="88.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="tipAnimalColumnTipAnimal" prefWidth="140.0" text="Tip Animal " />
+                            <TableColumn fx:id="tipAnimalColumnNumeAnimal" prefWidth="172.0" text="Nume Animal" />
+                              <TableColumn fx:id="tipAnimalColumnDescriere" minWidth="4.0" prefWidth="373.0" text="Descriere" />
+                          </columns>
+                        </TableView>
+                        <Button layoutX="14.0" layoutY="655.0" mnemonicParsing="false" onMouseClicked="#setBtnRefreshDateTipAnimalOnClick" prefHeight="48.0" prefWidth="202.0" text="Incarca Date Tip Animal" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Tratament">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableTratament" prefHeight="635.0" prefWidth="911.0" AnchorPane.bottomAnchor="82.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="tratamentColumnIdTratament" prefWidth="86.0" text="ID Tratament" />
+                            <TableColumn fx:id="tratamentColumnNumeMedicament" prefWidth="187.0" text="Nume Medicament" />
+                              <TableColumn fx:id="tratamentColumnFolosireMedicament" minWidth="0.0" prefWidth="354.0" text="Folosire Medicament" />
+                          </columns>
+                        </TableView>
+                        <Button layoutX="14.0" layoutY="655.0" mnemonicParsing="false" onMouseClicked="#setBtnRefreshDateTratamentOnClick" prefHeight="48.0" prefWidth="228.0" text="Incarca Date Tratament" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Veterinari">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="414.0" prefWidth="911.0">
+                     <children>
+                        <TableView fx:id="tableVeterinari" prefHeight="643.0" prefWidth="911.0" AnchorPane.bottomAnchor="74.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="veterinariColumnIdVeterinar" prefWidth="74.0" text="ID Veterinar" />
+                            <TableColumn fx:id="veterinariColumnNume" prefWidth="150.0" text="Nume" />
+                              <TableColumn fx:id="veterinariColumnPrenume" prefWidth="152.0" text="Prenume" />
+                              <TableColumn fx:id="veterinariColumnAdresa" prefWidth="225.0" text="Adresa" />
+                              <TableColumn fx:id="veterinariColumnEmail" minWidth="0.0" prefWidth="153.0" text="Email" />
+                              <TableColumn fx:id="veterinariColumnTelefon" prefWidth="156.0" text="Telefon" />
+                          </columns>
+                        </TableView>
+                        <Button layoutX="14.0" layoutY="655.0" mnemonicParsing="false" onMouseClicked="#setBtnRefreshDateVeterinariOnClick" prefHeight="48.0" prefWidth="235.0" text="Incarca Date Veterinari" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+          <Tab text="Consultatii">
+            <content>
+              <AnchorPane prefHeight="325.0" prefWidth="911.0">
+                     <children>
+                        <TableView fx:id="tableConsultatii" prefHeight="406.0" prefWidth="914.0" AnchorPane.bottomAnchor="311.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="consultatiiColumnCodConsultatie" prefWidth="104.0" text="Cod Consultatie" />
+                            <TableColumn fx:id="consultatiiColumnDataConsultatie" prefWidth="169.0" text="Data Consultatie" />
+                              <TableColumn fx:id="consultatiiColumnTratament" prefWidth="175.0" text="Tratament" />
+                              <TableColumn fx:id="consultatiiColumnNumeVeterinar" prefWidth="206.0" text="Nume Veterinar" />
+                              <TableColumn fx:id="consultatiiColumnPrenumeVeterinar" prefWidth="214.0" text="Prenume Veterinar" />
+                          </columns>
+                        </TableView>
+                        <TabPane layoutX="3.0" layoutY="408.0" prefHeight="309.0" prefWidth="911.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab text="Meniu">
+                                 <content>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <Button fx:id="btnAddConsultatii" layoutY="80.0" mnemonicParsing="false" onMouseClicked="#setBtnAddConsultatiiOnClick" prefHeight="48.0" prefWidth="208.0" text="Adauga Consultatii" />
+                                          <Button layoutX="4.0" layoutY="182.0" mnemonicParsing="false" onMouseClicked="#setBtnDeleteConsultatiiOnClick" prefHeight="48.0" prefWidth="183.0" text="Sterge Consultatii" />
+                                          <Button layoutY="22.0" mnemonicParsing="false" onMouseClicked="#setBtnRefreshConsultatiiOnClick" prefHeight="48.0" prefWidth="247.0" text="Incarca Date Consultatii" />
+                                          <TextField fx:id="txtConsultatieTratamentAdd" layoutX="259.0" layoutY="116.0" promptText="Tratament" />
+                                          <TextField fx:id="txtConsultatieNumeVeterinarAdd" layoutX="422.0" layoutY="116.0" promptText="Nume Veterinar" />
+                                          <Button fx:id="btnSaveConsultatii" layoutX="259.0" layoutY="151.0" mnemonicParsing="false" onMouseClicked="#setBtnSaveConsultatiiOnClick" prefHeight="16.0" prefWidth="42.0" text="Save" />
+                                          <DatePicker fx:id="txtConsultatieDataConsultatieAdd" layoutX="422.0" layoutY="80.0" prefHeight="25.0" prefWidth="148.0" />
+                                          <Button fx:id="btnEditConsultatii" layoutY="133.0" mnemonicParsing="false" onMouseClicked="#setBtnEditConsultatiiOnClick" prefHeight="41.0" prefWidth="191.0" text="Edit" />
+                                          <Button fx:id="btnConsultatiiCreate" layoutX="316.0" layoutY="149.0" mnemonicParsing="false" onMouseClicked="#setBtnConsultatiiCreateOnClick" prefHeight="4.0" prefWidth="79.0" text="Create" />
+                                          <TextField fx:id="txtConsultatiePrenumeVeterinarAdd" layoutX="423.0" layoutY="151.0" promptText="Prenume Veterinar" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                            </Tab>
+                            <Tab text="Search">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="51.0" prefWidth="585.0">
+                                       <children>
+                                          <TitledPane animated="false" layoutX="14.0" layoutY="9.0" prefHeight="220.0" prefWidth="301.0" text="Consultatie ">
+                                            <content>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="239.0">
+                                                   <children>
+                                                      <Button layoutX="173.0" layoutY="66.0" mnemonicParsing="false" onMouseClicked="#setBtnSearchConsultatieOnClick" prefHeight="48.0" prefWidth="120.0" text="Search Consultatie" />
+                                                      <Label layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="148.0" text="Data Consultatie" />
+                                                      <Label layoutX="14.0" layoutY="90.0" prefHeight="27.0" prefWidth="148.0" text="ID Veterinar" />
+                                                      <TextField fx:id="txtConsultatieVeterinarSearch" layoutX="14.0" layoutY="117.0" />
+                                                      <DatePicker fx:id="txtConsultatieDataConsultatieSearch" layoutX="14.0" layoutY="41.0" prefHeight="25.0" prefWidth="148.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                            </content>
+                                          </TitledPane>
+                                          <TitledPane animated="false" layoutX="344.0" layoutY="9.0" prefHeight="219.0" prefWidth="285.0" text="Animal tratat">
+                                            <content>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="193.0" prefWidth="264.0">
+                                                   <children>
+                                                      <Label layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="148.0" text="Animal" />
+                                                      <Label layoutX="14.0" layoutY="90.0" prefHeight="27.0" prefWidth="148.0" text="ID Tratament" />
+                                                      <TextField fx:id="txtConsultatieAnimalSearch" layoutX="14.0" layoutY="54.0" prefHeight="24.0" prefWidth="149.0" />
+                                                      <TextField fx:id="txtConsultatieIdTratamentSearch" layoutX="14.0" layoutY="117.0" />
+                                                      <Button layoutX="162.0" layoutY="66.0" mnemonicParsing="false" onMouseClicked="#setBtnSearchConsultatieAnimalOnClick" prefHeight="48.0" prefWidth="120.0" text="Search Animal" />
+                                                   </children>
+                                                </AnchorPane>
+                                            </content>
+                                          </TitledPane>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
